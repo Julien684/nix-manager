@@ -1,0 +1,13 @@
+/target/
+/dist/
+*.eopkg
+*.deb
+Cargo.lock.bak
+remote_sshrun*.py
+vmtest-*.sh
+incoming/
+smoke.err
+app.out
+screenshot*.png
+!assets/*.png
+!screenshot.png
