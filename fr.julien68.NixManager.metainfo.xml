@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>fr.julien68.NixManager</id>
+  <name>Nix Manager</name>
+  <summary>Install Nix and manage its packages</summary>
+  <description>
+    <p>
+      Nix Manager installs and removes the Nix package manager on a
+      non-NixOS distribution, then manages the packages of your own user
+      profile: search nixpkgs, install a package or an arbitrary flake,
+      upgrade and clean up.
+    </p>
+    <p>
+      It shows the detected state (Nix version, nix-daemon, install mode,
+      profile path, space used by the /nix store, build sandbox), streams
+      every command into a live journal, and disables its controls while an
+      operation runs.
+    </p>
+    <p>
+      Installing or removing Nix itself requires the administrator password
+      (pkexec); package operations never do. Packages installed through Nix
+      appear neither in Discover nor in eopkg — their updates go through Nix.
+    </p>
+  </description>
+  <launchable type="desktop-id">nix-manager.desktop</launchable>
+  <provides>
+    <binary>nix-manager</binary>
+  </provides>
+  <url type="homepage">https://github.com/Julien684/nix-manager</url>
+  <url type="bugtracker">https://github.com/Julien684/nix-manager/issues</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer_name>Julien</developer_name>
+  <categories>
+    <category>System</category>
+    <category>PackageManager</category>
+  </categories>
+  <keywords>
+    <keyword>nix</keyword>
+    <keyword>nixpkgs</keyword>
+    <keyword>packages</keyword>
+    <keyword>flakes</keyword>
+  </keywords>
+  <releases>
+    <release version="0.1.7" date="2026-11-15">
+      <description>
+        <p>Fix: installing Nix could hang forever because the generated wrapper script and the downloaded installer shared the same file name, making the wrapper execute itself in a loop.</p>
+      </description>
+    </release>
+    <release version="0.1.6" date="2026-11-15">
+      <description>
+        <p>Package selection is now kept across several searches, and the /etc/zoneinfo compatibility link is created automatically when Nix is installed (the Maintenance button is gone).</p>
+      </description>
+    </release>
+    <release version="0.1.5" date="2026-11-15">
+      <description>
+        <p>Packages tab rework: multi-select checkboxes, action buttons left of the tables, Enter key launches the search, relevance-ranked results. Menu entries are regenerated automatically after each install/removal. New button to fix the missing /etc/zoneinfo path required by Heroic and Steam sandboxes.</p>
+      </description>
+    </release>
+    <release version="0.1.4" date="2026-11-15">
+      <description>
+        <p>Installing Nix now detects leftovers from a previous installation (backup files, /nix, nixbld group, systemd units) and offers to clean them before installing, instead of failing with the installer's own error.</p>
+      </description>
+    </release>
+    <release version="0.1.3" date="2026-11-15">
+      <description>
+        <p>Menu integration now rewrites Exec= and Icon= to absolute store paths, so Nix applications launch and show their icon immediately after integration.</p>
+      </description>
+    </release>
+    <release version="0.1.2" date="2026-11-15">
+      <description>
+        <p>Creating the /nix subvolume now handles an existing empty directory and refuses explicitly when /nix already holds data.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-11-15">
+      <description>
+        <p>Allow unfree packages (discord, steam…) and create or delete a dedicated btrfs subvolume for /nix.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-11-15">
+      <description>
+        <p>Initial release: Nix state detection, install/uninstall, nixpkgs search, profile package management, flake install, upgrade, garbage collection and desktop integration.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.0"/>
+</component>
