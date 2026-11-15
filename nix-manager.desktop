@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Nix Manager
+Name[fr]=Gestionnaire Nix
+GenericName=Package manager
+GenericName[fr]=Gestionnaire de paquets
+Comment=Install Nix and manage its packages: search, install, update, remove
+Comment[fr]=Installer Nix et gérer ses paquets : rechercher, installer, mettre à jour, retirer
+Exec=nix-manager
+Icon=/usr/share/pixmaps/nix-manager.png
+StartupWMClass=nix-manager
+Terminal=false
+Categories=System;PackageManager;Qt;
+Keywords=nix;nixpkgs;flakes;packages;
+Keywords[fr]=nix;nixpkgs;flakes;paquets;
